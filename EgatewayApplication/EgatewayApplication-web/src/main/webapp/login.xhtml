@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <ui:composition template="/WEB-INF/include/logintemplate.xhtml">
+        <ui:define name="head">
+            <title>Login Page</title>
+        </ui:define>
+        <ui:define name="body">
+            <div class="login-container animated fadeInDown bg-white">
+                <div class="loginbox ">
+                    <div class="loginbox-title">SIGN IN</div>
+                    <div class="social-title "></div>
+                    <div class="social-buttons">
+
+                    </div>
+                  
+                </div>      
+                <h:form>
+                <div class="loginbox-textbox">
+                    <h:inputText class="form-control" a:placeholder="Email"  id="email" value="#{userController.email}"
+                                 required="true" requiredMessage="Please enter your email id" />
+                </div>
+                <div>
+                    <h:message for="email" style="color:red" />
+                </div>
+                <br/><br/>
+                <div class="loginbox-textbox">
+                    <h:inputSecret id="psw" class="form-control" a:placeholder="Password" value="#{userController.password}"
+                                   required="true" requiredMessage="Please enter your password" />
+                </div>
+                <div>
+                    <h:message for="psw" style="color:red" />
+                </div>
+                <br/><br/><div class="loginbox-forgot">
+<!--                    <a href="login.html">Forgot Password?</a>-->
+                </div>
+                <br/><br/><div class="loginbox-submit">
+                    <h:commandButton class="btn btn-primary btn-block" type="submit" value="Login"  action="#{userController.login}" />
+                </div>
+                <br/><br/> <div class="loginbox-signup">
+                    <h:link value="Sign Up" outcome="registerUser" />
+                </div>
+                <br/>
+                </h:form>
+            </div>
+            <div class="logobox">
+            </div>
+
+        </ui:define>
+    </ui:composition> 
+</html>
+
+

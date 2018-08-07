@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <ui:composition template="/WEB-INF/include/template.xhtml">
+        <ui:define name="head">
+       
+            <title>Inbox</title>
+        </ui:define>
+        <ui:define name="body">
+
+            <div class="page-content">
+                <!-- Page Breadcrumb -->
+                <div class="page-breadcrumbs">
+                    <ul class="breadcrumb">
+                        <li>
+                            <i class="fa fa-home"></i>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="inbox.xhtml">Mail</a>
+                        </li>
+                        <li class="active">Inbox</li>
+                    </ul>
+                </div>
+
+                <div class="page-header position-relative mail-header">
+                    <div class="header-buttons">
+                        <a class="sidebar-toggler" href="#">
+                            <i class="fa fa-arrows-h"></i>
+                        </a>
+                        <a class="refresh" id="refresh-toggler" href="">
+                            <i class="glyphicon glyphicon-refresh"></i>tooltip-primary
+                        </a>
+                        <a class="fullscreen" id="fullscreen-toggler" href="#">
+                            <i class="glyphicon glyphicon-fullscreen"></i>
+                        </a>
+                    </div>
+                    <!--Header Buttons End-->
+                </div>
+                <!-- /Page Header -->
+
+                <!-- Page Body -->
+                <div class="page-body no-padding">
+                    <div class="mail-container">
+                        <div class="mail-header">
+                          
+                        </div>
+                        
+           
+                        
+                            <ui:insert name="inboxcontent">
+                                
+                            </ui:insert>
+                            
+                
+                        
+                        <div class="mail-sidebar">
+                            <ul class="mail-menu">
+                                <li class="active">
+                                    <a href="inbox.xhtml">
+                                        <i class="fa fa-inbox"></i>
+                                        <span class="badge badge-default badge-square pull-right">#{inboxController.inboxCount}</span>
+                                        Inbox
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-star"></i>
+                                        <span class="badge badge-default badge-square pull-right">1</span>
+                                        Important
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="sent.xhtml">
+                                        <i class="glyphicon glyphicon-share"></i>
+                                        <span class="badge badge-default badge-square pull-right">#{inboxController.sentCount}</span>
+                                        Sent
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-envelope"></i>
+                                        Drafts
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-ban"></i>
+                                        <span class="badge badge-default badge-square pull-right">1</span>
+                                        Spam
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-trash-o"></i>
+                                        Trash
+                                    </a>
+                                </li>
+                                <li class="divider">
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        + Add Folder
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="mail-menu">
+                                <li class="menu-title">
+                                    <h6>Tags</h6>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="badge badge-palegreen badge-tag badge-square"></span>
+                                        Business
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <span class="badge badge-darkorange badge-tag badge-square"></span>
+                                        Sports
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <span class="badge badge-yellow badge-tag badge-square"></span>
+                                        Friends
+                                    </a>
+                                </li>
+                                <li class="divider">
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        + Add Tag
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ui:define>
+    </ui:composition> 
+</html>
+
+

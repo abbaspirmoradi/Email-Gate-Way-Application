@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd" metadata-complete="false">
+    <application>
+        <resource-handler>org.omnifaces.resourcehandler.UnmappedResourceHandler</resource-handler>
+    </application>
+    <navigation-rule>
+        <description>login user</description>
+        <from-view-id>/login.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{userController.login}</from-action>
+            <from-outcome>inbox</from-outcome>
+            <to-view-id>/inbox.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <description>register new user</description>
+        <from-view-id>/register.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{userController.addNewUser}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/success.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>        
+    <navigation-rule>
+        <description>send new Email</description>
+        <from-view-id>/composemessage.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{emailController.sendEmail}</from-action>
+            <from-outcome>inbox</from-outcome>
+            <to-view-id>/inbox.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>        
+</faces-config>

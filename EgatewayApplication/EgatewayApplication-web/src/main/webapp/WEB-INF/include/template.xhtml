@@ -1,0 +1,331 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html" >
+    <h:head >
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content=""/>
+        <meta name="author" content=""/>
+        <meta name="description" content="login page" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- Bootstrap core CSS -->
+        <h:outputStylesheet  name="bootstrap/css/bootstrap.min.css" ></h:outputStylesheet>
+        <h:outputStylesheet  name="bootstrap/css/beyond.min.css" ></h:outputStylesheet>
+        <h:outputStylesheet name="bootstrap/css/animate.min.css"></h:outputStylesheet>
+        <link rel="shortcut icon" href="resources/bootstrap/img/favicon.png" type="image/x-icon"></link>
+        <h:outputStylesheet name="bootstrap/css/weather-icons.min.css" ></h:outputStylesheet>
+        <h:outputStylesheet name="bootstrap/css/demo.min.css" ></h:outputStylesheet>
+        <h:outputStylesheet name="bootstrap/css/typicons.min.css" ></h:outputStylesheet>
+<!--        <h:outputStylesheet name="bootstrap/css/summernote.css" ></h:outputStylesheet>-->
+        <h:outputStylesheet library="webjars" name="font-awesome/4.6.3/css/font-awesome-jsf.css" />
+        <h:outputScript name="bootstrap/js/skins.min.js"/>
+        <f:verbatim>
+           
+        </f:verbatim>
+        <ui:insert name="head"/>
+    </h:head>
+    <h:body style="margin-left: 10px; margin-right: 10px; margin-bottom: 10px; margin-top: 10px;">
+        <!-- Navbar -->
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="navbar-container">
+                    <!-- Navbar Barnd -->
+                    <div class="navbar-header pull-right">
+                        <a href="#" class="navbar-brand">
+                            <small>
+                                <img src="img/logo1.png" alt="" />
+                            </small>
+                        </a>
+                    </div>
+                    <!-- /Navbar Barnd -->
+                    <!-- Sidebar Collapse -->
+                    <div class="sidebar-collapse" id="sidebar-collapse">
+                        <i class="collapse-icon fa fa-bars"></i>
+                    </div>
+                    <!-- /Sidebar Collapse -->
+                    <!-- Account Area and Settings -->
+                    <div class="navbar-header pull-left">
+                        <div class="navbar-account">
+                            <ul class="account-area">
+                                <li>
+                                    <a href="#" target="_blank" style="display: flex;align-items: center;">
+                                       <span class="white"> </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class=" dropdown-toggle" data-toggle="dropdown" title="Help" href="#">
+                                        <i class="icon fa fa-warning"></i>
+                                    </a>
+                                    <!--Notification Dropdown-->
+                                    <ul class="pull-right dropdown-menu dropdown-arrow dropdown-notifications">
+                                        <li>
+                                            <a href="#">
+                                                <div class="clearfix">
+                                                    <div class="notification-icon">
+                                                        <i class="fa fa-comments bg-themeprimary white"></i>
+                                                    </div>
+                                                    <div class="notification-body">
+                                                        <span class="title">   </span>
+                                                    </div>
+                                                    <div class="notification-extra">
+                                                        <i class="fa fa-clock-o themeprimary"></i>
+                                                        <span class="description"> </span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="clearfix">
+                                                    <div class="notification-icon">
+                                                        <i class="fa fa-comment bg-darkorange white"></i>
+                                                    </div>
+                                                    <div class="notification-body">
+                                                        <span class="title"></span>
+                                                    </div>
+                                                    <div class="notification-extra">
+                                                        <i class="fa fa-clock-o darkorange"></i>
+                                                        <span class="description"></span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-footer ">
+                                            <span>
+today                                            </span>
+                                        </li>
+                                    </ul>
+                                    <!--/Notification Dropdown-->
+                                </li>
+                                <li>
+                                    <a class="wave in dropdown-toggle" data-toggle="dropdown" title="Help" href="#">
+                                        <i class="icon fa fa-envelope"></i>
+                                        <span class="badge">2</span>
+                                    </a>
+                                    <!--Messages Dropdown-->
+                                    <ul class="pull-right dropdown-menu dropdown-arrow dropdown-messages">
+                                        <li>
+                                            <a href="#">
+                                                <img src="" class="message-avatar" alt="Divyia Austin"></img>
+                                                    <div class="message">
+                                                        <span class="message-sender">
+                                                        </span>
+                                                        <span class="message-time">
+                                                        </span>
+                                                        <span class="message-subject">
+                                                        </span>
+                                                        <span class="message-body">
+                                                        </span>
+                                                    </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="/Content/Customize/Dashboard/avatars/Osvaldus-Valutis.jpg" class="message-avatar" alt="Divyia Austin"></img>
+                                                    <div class="message">
+                                                        <span class="message-sender">
+                                                        </span>
+                                                        <span class="message-time">
+                                                        </span>
+                                                        <span class="message-subject">
+                                                        </span>
+                                                        <span class="message-body">
+                                                        </span>
+                                                    </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <!--/Messages Dropdown-->
+                                </li>
+                                <li>
+                                    <a class="dropdown-toggle" data-toggle="dropdown" title="Tasks" href="#">
+                                        <i class="icon fa fa-tasks"></i>
+                                        <span class="badge">4</span>
+                                    </a>
+                                    <!--Tasks Dropdown-->
+                                    <ul class="pull-right dropdown-menu dropdown-tasks dropdown-arrow ">
+                                        <li class="dropdown-header bordered-darkorange">
+                                            <i class="fa fa-tasks"></i>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">
+                                                <div class="clearfix">
+                                                    <span class="pull-right"></span>
+                                                    <span class="pull-left">68%</span>
+                                                </div>
+
+                                                <div class="progress progress-xs">
+                                                    <div style="width:68%" class="progress-bar progress-bar-warning"></div>
+                                                </div>
+                                            </a>
+                                        </li>
+
+
+                                        <li>
+                                            <a href="#">
+                                                <div class="clearfix">
+                                                    <span class="pull-right"></span>
+                                                    <span class="pull-left">65%</span>
+                                                </div>
+
+                                                <div class="progress progress-xs">
+                                                    <div style="width:65%" class="progress-bar"></div>
+                                                </div>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">
+                                                <div class="clearfix">
+                                                    <span class="pull-right"></span>
+                                                    <span class="pull-left">35%</span>
+                                                </div>
+
+                                                <div class="progress progress-xs">
+                                                    <div style="width:35%" class="progress-bar progress-bar-success"></div>
+                                                </div>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">
+                                                <div class="clearfix">
+                                                    <span class="pull-right"></span>
+                                                    <span class="pull-left">75%</span>
+                                                </div>
+
+                                                <div class="progress progress-xs">
+                                                    <div style="width:75%" class="progress-bar progress-bar-darkorange"></div>
+                                                </div>
+                                            </a>
+                                        </li>
+
+
+                                        <li class="dropdown-footer">
+                                            <a href="#">
+                                                
+                                            </a>
+                                            <button class="btn btn-xs btn-default shiny darkorange icon-only pull-left"><i class="fa fa-check"></i></button>
+                                        </li>
+                                    </ul>
+                                    <!--/Tasks Dropdown-->
+                                </li>
+                                <li>
+                                    <a class="login-area dropdown-toggle" data-toggle="dropdown">
+                                        <div class="avatar" title="">
+                                            <img src="resources/bootstrap/img/avatars/Javi-Jimenez.jpg" alt=""></img>
+                                        </div>
+                                        <section>
+                                            <h2>
+                                                <span class="profile">
+                                                    <span>
+                                                       #{userController.loginedUser}
+                                                    </span> 
+                                                </span>
+                                            </h2>
+                                        </section>
+                                    </a>
+                                    <!--Login Area Dropdown-->
+                                    <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
+                                        <!--Avatar Area-->
+                                        <li>
+                                            <div class="avatar-area">
+                                                <img src="resources/bootstrap/img/avatars/Javi-Jimenez.jpg" class="avatar"></img>
+                                                    <span class="caption"></span>
+                                            </div>
+                                        </li>
+                                        <!--Avatar Area-->
+                                        <li class="edit">
+                                            <a href="#" class="pull-left"></a>
+                                            <a href="#" class="pull-right"></a>
+                                        </li>
+                                        <!--Theme Selector Area-->
+                                        <li class="theme-area">
+                                            <ul class="colorpicker" id="skin-changer">
+                                             <li><h:outputLink class="colorpick-btn" style="background-color:#5DB2FF;" rel="resources/bootstrap/css/skins/blue.min.css"></h:outputLink></li>
+                                        <li><h:outputLink class="colorpick-btn" style="background-color:#03B3B2;"  rel="resources/bootstrap/css/skins/teal.min.css"></h:outputLink></li>
+                                        <li><h:outputLink class="colorpick-btn" style="background-color:#53a93f;" rel="resources/bootstrap/css/skins/green.min.css"></h:outputLink></li>
+                                        <li><h:outputLink class="colorpick-btn" style="background-color:#FF8F32;" rel="resources/bootstrap/css/skins/orange.min.css"></h:outputLink></li>
+                                        <li><h:outputLink class="colorpick-btn" style="background-color:#cc324b;" rel="resources/bootstrap/css/skins/pink.min.css"></h:outputLink></li>
+                                        <li><h:outputLink class="colorpick-btn" style="background-color:#AC193D;" rel="resources/bootstrap/css/skins/skins/darkred.min.css"></h:outputLink></li>
+                                        <li><h:outputLink class="colorpick-btn" style="background-color:#2dc3e8;" rel="resources/bootstrap/css/skins/azure.min.css"></h:outputLink></li>
+                                        <li><h:outputLink class="colorpick-btn" style="background-color:#8C0095;" rel="resources/bootstrap/css/skins/purple.min.css"></h:outputLink></li>
+                                        <li><h:outputLink class="colorpick-btn" style="background-color:#0072C6;" rel="resources/bootstrap/css/skins/darkblue.min.css"></h:outputLink></li>
+                                        <li><h:outputLink class="colorpick-btn" style="background-color:#585858;" rel="resources/bootstrap/css/skins/gray.min.css"></h:outputLink></li>
+                                        <li><h:outputLink class="colorpick-btn" style="background-color:#474544;" rel="resources/bootstrap/css/skins/black.min.css"></h:outputLink></li>
+                                        <li><h:outputLink class="colorpick-btn" style="background-color:#001940;" rel="resources/bootstrap/css/skins/deepblue.min.css"></h:outputLink></li>  </ul>
+                                        </li>
+                                        <!--/Theme Selector Area-->
+                                        <li class="dropdown-footer">
+                                      
+                                            <span>  </span>
+                                            <h:form>                                         
+                                                <h:commandButton class="btn btn-xs" action="#{userController.logout}"></h:commandButton>
+                                                <i class="fa fa-sign-out">Sign out</i>
+                                            </h:form>
+<!--                                            <button class="btn btn-xs" type="submit" title="خروج"><i class="fa fa-sign-out"></i></button>-->
+                                        </li>
+                                    </ul>
+                                    <!--/Login Area Dropdown-->
+                                </li>
+                                <!-- /Account Area -->
+                                <!--Note: notice that setting div must start right after account area list.
+                                    no space must be between these elements-->
+                                <!-- Settings -->
+                            </ul><div class="setting">
+                                <a id="btn-setting" title="Setting" href="#">
+                                    <i class="icon glyphicon glyphicon-cog"></i>
+                                </a>
+                            </div><div class="setting-container">
+                                <label>
+                                    <input type="checkbox" id="checkbox_fixednavbar"></input>
+                                        <span class="text"></span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="checkbox_fixedsidebar"></input>
+                                        <span class="text"></span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="checkbox_fixedbreadcrumbs"></input>
+                                        <span class="text"></span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" id="checkbox_fixedheader"></input>
+                                        <span class="text"></span>
+                                </label>
+                            </div>
+                            <!-- Settings -->
+                        </div>
+                    </div>
+                    <!-- /Account Area and Settings -->
+                </div>
+            </div>
+        </div>
+        <!-- /Navbar -->
+
+
+        <ui:insert name="body"/>
+        
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <h:outputScript name="assets/js/jquery.min.js"/>
+        <h:outputScript name="assets/js/bootstrap.min.js"/>
+        <h:outputScript name="assets/js/slimscroll/jquery.slimscroll.min.js"/>
+        <h:outputScript name="assets/js/beyond.min.js"/>
+        <h:outputScript name="assets/js/editors/summernote/summernote.min.js"/>
+        <h:outputScript>
+            $('#email-text').summernote({ height: $(window).height() - 310 });
+            function setHiddenValue(new_value){
+            document.getElementById('form:emailbody').value =  document.getElementsByClassName('note-editable')[0].innerHTML;
+            }   
+    </h:outputScript>
+    </h:body>
+</html>

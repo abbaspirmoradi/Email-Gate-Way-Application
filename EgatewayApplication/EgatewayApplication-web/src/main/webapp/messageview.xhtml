@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <ui:composition template="/WEB-INF/include/inboxtemplate.xhtml">
+        <f:metadata>
+            <f:viewParam name="subject" value="#{emailController.subject}" />
+            <f:viewParam name="body" value="#{emailController.body}" />
+            <f:viewParam name="reciever" value="#{emailController.reciever}" />
+            <f:viewParam name="sender" value="#{emailController.sender}" />
+            <f:viewParam name="recieveDate" value="#{emailController.recieveDate}" />
+        </f:metadata>
+        <ui:define name="inboxcontent">
+            <div class="mail-header">
+                <div class="mail-title">
+                    <strong> #{emailController.subject}</strong>
+                    <span class="label label-palegreen">Business</span>
+                    <span class="label label-yellow">Friends</span>
+                </div>
+                <ul class="header-buttons pull-right">
+                    <li>
+                        <a class="tooltip-primary" data-toggle="tooltip" data-original-title="Reply"><i class="fa fa-mail-reply"></i> </a>
+                    </li>
+                    <li>
+                        <a class="tooltip-primary" data-toggle="tooltip" data-original-title="ReplyAll"><i class="fa fa-mail-reply-all"></i></a>
+                    </li>
+                    <li>
+                        <a class="tooltip-primary" data-toggle="tooltip" data-original-title="Remove"><i class="glyphicon glyphicon-remove"></i></a>
+                    </li>
+                    <li>
+                        <a class="tooltip-primary" data-toggle="tooltip" data-original-title="Print"><i class="fa fa-print"></i></a>
+                    </li>
+                </ul>
+            </div>
+
+            <h:form>
+            <div class="mail-body">
+                <div class="mail-info">
+                    <div class="mail-sender">
+                        <a href="#">
+                                <c:if test="#{emailController.messageType == Inbox}">
+                                    <label>#{emailController.sender}</label>   to <span>me</span>
+                                </c:if >
+                                <c:if test="#{emailController.messageType == Sent}">
+                                    me to <span> #{emailController.reciever}</span>
+                                </c:if>
+                        </a>
+                    </div>
+                    <div class="mail-date">
+                        #{emailController.recieveDate}
+                    </div>
+                </div>
+
+                <div class="mail-reply" style="background: #FAFAFA;">
+                    <div class="reply-form">
+                        <div >
+                            <h:outputText value="#{emailController.body}"  escape="false"/>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <c:choose>
+                    <c:when test="#{emailController.attachmentFile eq null}">
+                    </c:when>
+                    <c:otherwise>
+                        <div class="mail-attachments">
+                            <h4>
+                                <i class="fa fa-paperclip"></i> Attachments <span>(1)</span>
+                            </h4>
+                            <ul>
+                                <li>
+                                    <a href="#" class="thumb">
+                                        <img src="resources/assets/img/attach-blue.png"></img>
+                                    </a>
+
+                                    <a href="#" class="name">
+                                        #{emailController.attachmentFileName}
+                                        <span>16KB</span>
+                                    </a>
+
+                                    <div class="links">
+                                        <h:commandButton value="View" action="#{emailController.download}" />
+                                        -
+                                        <h:commandButton value="Download" action="#{emailController.download}" />
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </c:otherwise>
+                </c:choose>
+
+                <div class="mail-text" style="background: FAFAFA;">
+                    <a href="composemessage.xhtml">Reply</a> or <a href="messageview.xhtml">Forward</a> this message...
+                </div>
+            </div>
+            </h:form>
+        </ui:define>
+
+    </ui:composition> 
+</html>
+
+

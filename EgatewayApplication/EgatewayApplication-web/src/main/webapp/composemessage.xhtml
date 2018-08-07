@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core" >
+
+    <ui:composition template="/WEB-INF/include/inboxtemplate.xhtml">
+
+        <ui:define name="inboxcontent" >
+            <h:form id="form" enctype="multipart/form-data">
+                <div class="mail-header"> 
+                    <ul class="header-buttons">
+                        <li>
+                            <h:commandLink  style="data-original-title:Send;data-toggle:tooltip" class="tooltip-primary" onclick="setHiddenValue();" action="#{emailController.sendEmail}">
+                                <i class="fa fa-external-link"></i>
+                            </h:commandLink>                            
+                        </li>
+                        <li>
+                            <h:inputFile id="filer" class="tooltip-primary"  style="data-original-title:Attach;data-toggle:tooltip"  value="#{emailController.file}">
+                            </h:inputFile>
+                        </li>
+                        <li>
+                            <a class="tooltip-primary" data-toggle="tooltip" href="inbox.xhtml" data-original-title="Cancel"><i class="glyphicon glyphicon-remove"></i></a>
+                        </li>
+                        <li>
+                            <h:commandLink  style="data-original-title:Draft;data-toggle:tooltip"  class="tooltip-primary" action="#{emailController.saveToDraftEmail}">
+                                <i class="glyphicon glyphicon-save"></i>
+                            </h:commandLink>
+                        </li>
+                    </ul>
+                    <div class="draft">
+                        Last Draft Saved 1 minutes ago
+                    </div>
+                </div>
+                <div class="mail-body">
+
+
+                    <div class="mail-compose">
+                        <div class="form-group bordered-left-4 bordered-themeprimary">
+                            <label for="to">To:</label>
+                            <h:inputText class="form-control" id="to" tabindex="1"  value="#{emailController.reciever}"
+                                         required="true" requiredMessage="required!" />
+                            <h:message for="to" style="color:red" />
+                            <div class="field-options">
+                                <a href="javascript:;" onclick="$(this).hide();
+                                        $('#cc').parent().removeClass('hidden');
+                                        $('#cc').focus();">CC</a>
+                                <a href="javascript:;" onclick="$(this).hide();
+                                        $('#bcc').parent().removeClass('hidden');
+                                        $('#bcc').focus();">BCC</a>
+                            </div>
+                        </div>
+
+                        <div class="form-group bordered-left-4 bordered-themesecondary">
+                            <label for="subject">Subject:</label>
+                            <h:inputText class="form-control" id="subject" tabindex="1"  value="#{emailController.subject}"/>
+                        </div>
+                        <div class="compose-message-editor">
+                            <div id="email-text" class="note-editor note-frame panel" style="display: none;"></div>
+                            <h:inputHidden id="emailbody"></h:inputHidden>
+                        </div>
+                    </div>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition> 
+</html>
+
+

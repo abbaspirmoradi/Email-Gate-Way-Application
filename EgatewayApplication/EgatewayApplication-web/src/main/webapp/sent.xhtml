@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <ui:composition template="/WEB-INF/include/inboxtemplate.xhtml">
+
+        <ui:define name="inboxcontent">
+            <div class="mail-header">
+                <ul class="header-buttons">
+                    <li>
+                        <a href="composemessage.xhtml" class="tooltip-primary" data-toggle="tooltip" data-original-title="Compose"><i class="glyphicon glyphicon-pencil"></i></a>
+                    </li>
+                    <li>
+                        <a class="tooltip-primary" data-toggle="tooltip" data-original-title="Options"><i class="fa fa-angle-down"></i></a>
+                    </li>
+                    <li>
+                        <a class="tooltip-primary" data-toggle="tooltip" data-original-title="Reply"><i class="glyphicon glyphicon-repeat"></i></a>
+                    </li>
+                    <li>
+                        <a class="tooltip-primary" data-toggle="tooltip" data-original-title="Forward"><i class="glyphicon glyphicon-share-alt"></i></a>
+                    </li>
+                    <li>
+                        <a class="tooltip-primary" data-toggle="tooltip" data-original-title="Remove"><i class="glyphicon glyphicon-remove"></i></a>
+                    </li>
+                    <li>
+                        <a class="tooltip-primary" data-toggle="tooltip" data-original-title="Important"><i class="fa fa-exclamation"></i></a>
+                    </li>
+                </ul>
+
+                <ul class="header-buttons pull-right">
+                    <li>
+                        <a><i class="fa fa-angle-left"></i></a>
+                    </li>
+                    <li>
+                        <a><i class="fa fa-angle-right"></i></a>
+                    </li>
+                    <li class="search">
+                        <span class="input-icon">
+                            <input class="form-control input-sm" id="fontawsome-search" type="text"></input>
+                            <i class="glyphicon glyphicon-search lightgray"></i>
+                        </span>
+                    </li>
+                </ul>
+                <div class="pages">
+                    1-100 of 608
+                </div>
+            </div>
+            <h:form>
+                <div class="mail-body">
+                    <ul class="mail-list">
+                        <ui:repeat value="#{inboxController.sentEmails}" var="email">
+                            <li class="list-item unread">
+                                <div class="item-check">
+                                    <label>
+                                        <input type="checkbox"></input>
+                                        <span class="text"></span>
+                                    </label>
+                                </div>
+                                <div class="item-star">
+                                    <a href="#" class="">
+                                        <i class="fa fa-star-o"></i>
+                                    </a>
+                                </div>
+                                <div class="item-sender" style="font-weight: 400 !important">
+                                    <h:commandLink action="#{emailController.viewSentEmail(email)}"  class="col-name">#{email.reciever}</h:commandLink>
+                                </div>
+                                <div class="item-subject" style="font-weight: 400 !important">
+                                    <span class="label label-palegreen">Business</span>
+                                    <h:commandLink action="#{emailController.viewSentEmail(email)}"  class="col-name">#{email.subject}</h:commandLink>
+                                </div>
+                              
+                                <div class="item-options">
+                                    <h:commandLink action="#{emailController.viewSentEmail(email)}">
+                                        <h:panelGroup rendered="#{email.attachmentFileName!=null}">
+                                            <i class="fa fa-paperclip"></i>
+                                        </h:panelGroup> 
+                                    </h:commandLink>
+                                </div>
+                                <div class="item-time">
+                                    #{email.recieveDate}
+                                </div>
+                            </li>
+                        </ui:repeat> 
+                    </ul>
+                </div> 
+            </h:form>
+        </ui:define>
+
+    </ui:composition> 
+</html>
+
+
